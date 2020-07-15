@@ -153,47 +153,48 @@
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, 
 //      і доавляет його в поточний об'єкт car
 
-// let car = {
-//     model: 'Accord',
-//     manufacturer: 'Honda',
-//     prodYear: 2014,
-//     maxSpeed: 220,
-//     engCapacity: 2.4
-// }
+let car = {
+    model: 'Accord',
+    manufacturer: 'Honda',
+    prodYear: 2014,
+    maxSpeed: 220,
+    engCapacity: 2.4,
+    
+    drive: function () {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} кілометрів на годину`);
+    },
+    
+    info: function () {
+        console.log(`model: ${this.model}, manufacturer: ${this.manufacturer}, prodYear: ${this.prodYear}, maxSpeed: ${this.maxSpeed}, engCapacity: ${this.engCapacity}`);
+        console.log(car);
+    },
+    
+    increaseMaxSpeed: function (newSpeed) {
+        this.maxSpeed += newSpeed;
+        console.log(this.maxSpeed);
+    },
+    
+    changeYear: function (newValue) {
+        this.prodYear = newValue;
+        console.log(this.prodYear);
+    },
+    
+    addDriver: function (driver) {
+        this.driver = driver;
+    }
+    
+};
 
-// function drive () {
-//     console.log(`їдемо зі швидкістю ${car.maxSpeed} кілометрів на годину`);
-// }
+let driver = {
+    name: 'Roman',
+    age: 31
+}
 
-// function info () {
-//     console.log(`model: ${car.model}, manufacturer: ${car.manufacturer}, prodYear: ${car.prodYear}, maxSpeed: ${car.maxSpeed}, engCapacity: ${car.engCapacity}`);
-//     console.log(car);
-// }
-
-// function increaseMaxSpeed (newSpeed) {
-//     car.maxSpeed = newSpeed;
-//     console.log(car.maxSpeed);
-// }
-
-// function changeYear (newValue) {
-//     car.prodYear = newValue;
-//     console.log(car.prodYear);
-// }
-
-// function addDriver (driver) {
-//     car.driver = driver;
-// }
-
-// let driver = {
-//     name: 'Roman',
-//     age: 31
-// }
-
-// drive();
-// info();
-// increaseMaxSpeed(270);
-// changeYear(2019);
-// addDriver(driver);
+car.drive();
+car.info();
+car.increaseMaxSpeed(100);
+car.changeYear(2019);
+car.addDriver(driver);
 
 //========================================================================================================================================================================================
 
@@ -209,7 +210,7 @@
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
 
-// function Car (model, manufacturer, prodYear, maxSpeed, engCapacity) {
+// function Car (model, manufacturer, prodYear, maxSpeed, engCapacity, driver) {
 //     this.model = model;
 //     this.manufacturer = manufacturer;
 //     this.prodYear = prodYear;
@@ -371,42 +372,42 @@
 // --Сторити об'єкт типу "принц" за допомоги функції конструктора з полями ім'я, вік, туфелька яку він знайшов, та функцію "пошук попелюшки"
 // -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
 
-function Cinderella (name, age, footSize) {
-    this.name = name;
-    this.age = age;
-    this.footSize = footSize;
-}
+// function Cinderella (name, age, footSize) {
+//     this.name = name;
+//     this.age = age;
+//     this.footSize = footSize;
+// }
 
-let vika = new Cinderella('Vika', 20, 36);
-let ania = new Cinderella('Ania', 21, 37);
-let nata = new Cinderella('Nata', 22, 38);
-let olia = new Cinderella('Olia', 23, 35);
-let tina = new Cinderella('Tina', 24, 34);
-let rita = new Cinderella('Rita', 25, 36);
-let tania = new Cinderella('Tania', 26, 36);
-let lilia = new Cinderella('Lilia', 27, 37);
-let lena = new Cinderella('Lena', 28, 39);
-let gosha = new Cinderella('Gosha', 29, 38);
+// let vika = new Cinderella('Vika', 20, 36);
+// let ania = new Cinderella('Ania', 21, 37);
+// let nata = new Cinderella('Nata', 22, 38);
+// let olia = new Cinderella('Olia', 23, 35);
+// let tina = new Cinderella('Tina', 24, 34);
+// let rita = new Cinderella('Rita', 25, 36);
+// let tania = new Cinderella('Tania', 26, 36);
+// let lilia = new Cinderella('Lilia', 27, 37);
+// let lena = new Cinderella('Lena', 28, 39);
+// let gosha = new Cinderella('Gosha', 29, 38);
 
-const cindArray = [vika, ania, nata, olia, tina, rita, tania, lilia, lena, gosha];
-console.log(cindArray);
-
-
-function Prince (name, age, shoeSize){
-    this.name = name;
-    this.age = age;
-    this.shoeSize = shoeSize;
-}
-
-let makdak = new Prince ('Makdak', 31, 35);
-
-function cinderSearch (arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].footSize === makdak.shoeSize){
-            console.log(`${makdak.name} will merry ${arr[i].name}`);
-        }
-    }
-}
+// const cindArray = [vika, ania, nata, olia, tina, rita, tania, lilia, lena, gosha];
+// console.log(cindArray);
 
 
-cinderSearch(cindArray);
+// function Prince (name, age, shoeSize){
+//     this.name = name;
+//     this.age = age;
+//     this.shoeSize = shoeSize;
+// }
+
+
+// function cinderSearch (arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i].footSize === makdak.shoeSize){
+//             console.log(`${makdak.name} will merry ${arr[i].name}`);
+//         }
+//     }
+// }
+
+// let makdak = new Prince ('Makdak', 31, 35);
+
+// cinderSearch(cindArray);
